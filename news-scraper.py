@@ -28,3 +28,36 @@ def extract_news(url):
     content += cnt
     content += ('<br>-----<br>')
     content += ('<br><br>End of message.')
+
+
+# send mail
+
+print('composing Email...')
+
+SERVER = 'smtp.gmail.com'
+PORT = 587
+FROM = 'johnny_nyl@hotmail.com'
+TO = 'johnny_nyl@hotmail.com'
+PASS = '******'
+
+msg = MIMEMultipart()
+
+msg['Subject'] = 'Top news stories HN' + \
+    ' ' + str(now.day) + '-' + str(now.year)
+msg['From'] = FROM
+msg['To'] = TO
+
+msg.attach(MIMEText(content, 'html'))
+
+print('Initiating server...')
+
+server = smtplib.SMTP(SERVER, PORT)
+server.set_debuglevel(1)
+server.ehlo()
+server.starttls()
+server.login(FROM, PASS)
+server.sendmail(FROM, TO, msg.as_string())
+
+print('Email sent!')
+
+server.quit()
