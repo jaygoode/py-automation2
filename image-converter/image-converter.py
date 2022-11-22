@@ -4,6 +4,7 @@ import glob
 
 print(glob.glob("*.png"))
 
+# based on SO Answer: https://stackoverflow.com/a/43258974/5086335
 for file in glob.glob("*.png"):
     im = Image.open(file)
     rgb_im = im.convert('RGB')
