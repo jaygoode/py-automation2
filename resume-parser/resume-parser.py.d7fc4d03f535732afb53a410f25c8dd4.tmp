@@ -49,7 +49,7 @@ def parse_content(text):
     emails.append(email)
     phones.append(phone)
     skills.append(unique_skills_list)
-    print("Extraction completed successfully!!!")
+    print("Extraction completed successfully!")
 
 
 for file in os.listdir('c:/Users/johnny/fs11/py-automate2/resume-parser/resumes'):
