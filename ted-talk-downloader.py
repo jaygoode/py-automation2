@@ -1,5 +1,4 @@
 import requests  # getting content of the TED Talk page
-import ghostscript
 from bs4 import BeautifulSoup  # web scraping
 
 import re  # Regular Expression pattern matching
