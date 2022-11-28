@@ -1,4 +1,4 @@
-from gensim.summarization.summarizer import summarize
+# from gensim.summarization.summarizer import summarize
 from bs4 import BeautifulSoup
 import requests
 import gensim
@@ -15,4 +15,4 @@ def get_only_text(url):
 text = get_only_text(url)
 
 
-print(summarize(repr(text), word_count=100))
+# print(summarize(repr(text), word_count=100))
